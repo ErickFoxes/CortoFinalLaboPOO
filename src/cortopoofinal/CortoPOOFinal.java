@@ -51,7 +51,7 @@ public class CortoPOOFinal extends JFrame{
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(null);
         formulario();
-        //llenarTabla();
+        llenarTabla();
        Container container = getContentPane();
         container.add(carnet);
        container.add(nombre);
@@ -151,7 +151,7 @@ public class CortoPOOFinal extends JFrame{
                     case 3:
                         return String.class;
                     default:
-                        return Boolean.class;
+                        return int.class;
                 }
             }
         };

@@ -25,7 +25,7 @@ public class InscripcionesDao implements metodos<Inscripciones>{
     private static final String SQL_UPDATE ="UPDATE alumnos SET nombres =?, apellidos=?,edad = ?,universidad=?, estado =? WHERE carnet=?";
     private static final String SQL_DELETE = "DELETE FROM alumnos WHERE carnet=?";
     private static final String SQL_READ = "SELECT * FROM alumnos WHERE carnet=?";
-    private static final String SQL_READALL ="SELECT * FROM alumnos";
+    private static final String SQL_READALL ="SELECT carnet,nombres,apellidos,universidad,estado FROM alumnos";
 
     private static final Conexion con=Conexion.conectar();
     @Override
