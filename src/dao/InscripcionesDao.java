@@ -18,7 +18,7 @@ import modelo.Inscripciones;
 
 /**
  *
- * @author LN710Q
+ * @author Erick
  */
 public class InscripcionesDao implements metodos<Inscripciones>{
     private static final String SQL_INSERT ="INSERT INTO alumnos (carnet,nombres,apellidos,edad,universidad,estado) VALUES (?,?,?,?,?,?)";
