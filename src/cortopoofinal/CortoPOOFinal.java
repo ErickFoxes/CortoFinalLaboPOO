@@ -153,7 +153,7 @@ public class CortoPOOFinal extends JFrame{
                     case 3:
                         return String.class;
                     default:
-                        return int.class;
+                        return Boolean.class;
                 }
             }
         };
@@ -168,8 +168,14 @@ public class CortoPOOFinal extends JFrame{
         
         //Agregamos el resultado a nuestro JTable
         //se agregan de tipo Object
+        boolean b=true;
         for (Inscripciones fi: filtros){
-            tm.addRow(new Object[]{fi.getCarnet(),fi.getNombres(),fi.getApellidos(),fi.getUniversidad(),fi.getEstado()});
+            if(fi.getEstado()==1){
+                b=true;
+            }else{
+                b=false;
+            }
+            tm.addRow(new Object[]{fi.getCarnet(),fi.getNombres(),fi.getApellidos(),fi.getUniversidad(),b});
             
         }
         //le agregamos el modelo a nuestra tabla
