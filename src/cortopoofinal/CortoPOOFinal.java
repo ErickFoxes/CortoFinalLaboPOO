@@ -12,6 +12,7 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import javax.swing.ButtonGroup;
 import javax.swing.JButton;
+import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -52,17 +53,18 @@ public class CortoPOOFinal extends JFrame{
         setLayout(null);
         formulario();
         llenarTabla();
+        agregarLabels();
        Container container = getContentPane();
         container.add(carnet);
        container.add(nombre);
         container.add(apellidos);
         container.add(edad);
-        /*container.add(lblCarnet);
+        container.add(lblCarnet);
         container.add(lblNombre);
         container.add(lblApellidos);
         container.add(lblEdad);
         container.add(lblUniversidad);
-        container.add(lblEstado);*/
+        container.add(lblEstado);
         container.add(buscar);
         container.add(insertar);
         container.add(actualizar);
@@ -72,7 +74,7 @@ public class CortoPOOFinal extends JFrame{
         container.add(si);
         container.add(no);
         container.add(table);
-        agregarLabels();
+        
         setSize(1000,800);
         eventos();
     }
@@ -84,11 +86,11 @@ public class CortoPOOFinal extends JFrame{
         lblUniversidad = new JLabel("Universidad");
         lblEstado = new JLabel("Estado");
         lblCarnet.setBounds(10,25,ANCHOC,ALTOC);
-        lblNombre.setBounds(10,40,ANCHOC,ALTOC);
-        lblApellidos.setBounds(80,40,ANCHOC,ALTOC);
-        lblEdad.setBounds(10,55,ANCHOC,ALTOC);
-        lblUniversidad.setBounds(10,70,ANCHOC,ALTOC);
-        lblEstado.setBounds(10,85,ANCHOC,ALTOC);
+        lblNombre.setBounds(10,70,ANCHOC,ALTOC);
+        lblApellidos.setBounds(300,70,ANCHOC,ALTOC);
+        lblEdad.setBounds(10,120,ANCHOC,ALTOC);
+        lblUniversidad.setBounds(10,170,ANCHOC,ALTOC);
+        lblEstado.setBounds(10,200,ANCHOC,ALTOC);
     }
     public final void formulario(){
         carnet = new JTextField();
@@ -210,7 +212,7 @@ public class CortoPOOFinal extends JFrame{
                 InscripcionesDao fd = new InscripcionesDao();
                 Inscripciones f = new Inscripciones(carnet.getText(),nombre.getText(),apellidos.getText(),Integer.parseInt(edad.getText()),universidades.getSelectedItem().toString(),radioB);
                 
-                if(fd.create(f)){
+                if(fd.update(f)){
                     JOptionPane.showMessageDialog(null, "Filtro registrado con exito");
                     limpiarCampos();
                     llenarTabla();

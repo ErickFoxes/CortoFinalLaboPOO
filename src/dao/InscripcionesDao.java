@@ -81,7 +81,7 @@ public class InscripcionesDao implements metodos<Inscripciones>{
             ps.setInt(3,c.getEdad());
             ps.setString(4,c.getUniversidad());
             ps.setInt(5, c.getEstado());
-             ps.setString(6, c.getCarnet());
+            ps.setString(6, c.getCarnet());
             if(ps.executeUpdate()>0){
                 return true;
             }
@@ -104,7 +104,7 @@ public class InscripcionesDao implements metodos<Inscripciones>{
             ps.setString(1, key.toString());
             rs = ps.executeQuery();
             while(rs.next()){
-                f = new Inscripciones(rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(5),rs.getInt(6));
+                f = new Inscripciones(rs.getString(2),rs.getString(3),rs.getString(4),rs.getInt(5),rs.getString(6),rs.getInt(7));
             }
         }catch (SQLException ex){
             System.out.println(ex.getMessage());

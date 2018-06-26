@@ -40,7 +40,7 @@ public class Conexion {
         user = "root";
         pass ="";
         driver ="com.mysql.jdbc.Driver";
-        url = "jdbc:mysql://localhost/inscripciones";
+        url = "jdbc:mysql://localhost/sql";
     }
     public Connection getCnx(){
         return cnx;
